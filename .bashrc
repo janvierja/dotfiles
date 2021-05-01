@@ -63,7 +63,7 @@ if [ "$color_prompt" = yes ]; then
 else
 	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-unset color_prompt force_color_prompt
+# unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -231,3 +231,31 @@ else
 	on_icyan='\e[0;106m'    # cyan
 	on_iwhite='\e[0;107m'   # white
 fi
+
+
+# Source other bash stuff
+# Below taken from https://github.com/git/git contrib/completion dir
+# git-prompt.sh has been customized to enable GIT_PS1_DECLARATIVE
+source ~/dotfiles/git-completion.bash
+source ~/dotfiles/git-prompt.sh
+
+
+# Setup prompts
+if [ "$color_prompt" = yes ]; then
+
+	GIT_PS1_SHOWDIRTYSTATE=1
+	GIT_PS1_SHOWTRACKEDFILES=1
+	GIT_PS1_SHOWUPSTREAM=verbose
+	GIT_PS1_SHOWCOLORHINTS=1
+	GIT_PS1_STATESEPARATOR=''
+	GIT_PS1_SHOWSTASHSTATE=1
+	GIT_PS1_DECLARATIVE=1
+
+	PROMPT_COMMAND='__git_ps1 '
+	PROMPT_COMMAND+='\\n"\[$green\]\u$reset at '
+	PROMPT_COMMAND+='\[$yellow\]\h$reset in '
+	PROMPT_COMMAND+='$blue\W$reset" '
+	PROMPT_COMMAND+='"\n→  "'
+	export PROMPT_COMMAND
+fi
+
