@@ -239,6 +239,10 @@ fi
 source ~/dotfiles/git-completion.bash
 source ~/dotfiles/git-prompt.sh
 
+# When using gruvbox vim colorscheme, overload system-default 256-color palette
+source ~/.vim/bundle/gruvbox/gruvbox_256palette.sh
+
+
 
 # Setup prompts
 if [ "$color_prompt" = yes ]; then
