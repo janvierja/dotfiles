@@ -310,14 +310,6 @@ autocmd BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 au BufNewFile * set fileformat=unix
 
-" Returns true if paste mode is enabled
-function! HasPaste()
-  if &paste
-    return '**PASTE MODE**  '
-  en
-  return ''
-endfunction
-
 " If it is a shebang script change file mode to make it executable.
 function MakeScriptExecutable()
   if getline(1) =~ "^#!"
