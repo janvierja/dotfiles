@@ -168,6 +168,12 @@ nmap <leader>gh :diffget //3<CR>
 nmap <leader>gu :diffget //2<CR>
 nmap <leader>gs :G<CR>
 
+" For nerdtree
+nnoremap <leader>n :NERDTreeToggle<CR>
+
+" For taglist
+nnoremap <leader>t :TlistToggle<CR>
+
 
 "  Reading and writing files {{{1
 set autoread			    " Automatically re-read files changed outside of Vim
