@@ -174,6 +174,11 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 " For taglist
 nnoremap <leader>t :TlistToggle<CR>
 
+" For UltiSnips; rebind coz
+"   messes up with real <tab> when used in source code
+let g:UltiSnipsExpandTriger='<c-0>'
+
+
 
 "  Reading and writing files {{{1
 set autoread			    " Automatically re-read files changed outside of Vim
